@@ -4,7 +4,6 @@ import jobs from '../../utilities/jobs.json'
 
 const JobListings: React.FC = () => {
     let recentJobs = jobs.jobs.slice(0, 3);
-    console.log(recentJobs);
     
     return (
         <section className='bg-blue-50 px-4 py-10'>
