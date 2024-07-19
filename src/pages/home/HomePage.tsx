@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
         <Layout>
             <Hero title={'Become a React Dev'} subtitle={"Find the React job that fits your skillset"} />
             <HomeCards />
-            <JobListings />
+            <JobListings isHome={true} />
             <ViewAllJobs />
         </Layout>
     )
