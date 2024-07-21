@@ -8,7 +8,7 @@ import {
 import HomePage from "../../pages/home/HomePage";
 import JobsPage from "../../pages/jobs/JobsPage";
 import NotFound from "../../pages/NotFound/NotFound";
-import JobPage from "../../pages/jobs/JobPage";
+import JobPage, {jobLoader} from "../../pages/jobs/JobPage";
 
 // const Routers: React.FC = () => {
 //     return (
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
             <Route path="/">
                 <Route index element={<HomePage />} />
                 <Route path="jobs" element={<JobsPage />} />
-                <Route path="jobs/:id" element={<JobPage />} />
+                <Route path="jobs/:id" element={<JobPage />} loader={ jobLoader } />
                 <Route path="*" element={<NotFound />} />
             </Route>
     )
