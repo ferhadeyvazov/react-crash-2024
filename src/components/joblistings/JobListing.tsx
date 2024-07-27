@@ -7,7 +7,6 @@ import {IJob} from './models'
 const JobListing: React.FC<IJob> = ({ job }) => {
     const [showFullDescription, setShowFullDescription]=React.useState(false);
     let description = job.description;
-console.log(job);
 
     if(!showFullDescription){
         description = description.substring(0, 90) + "...";

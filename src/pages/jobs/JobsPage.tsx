@@ -3,7 +3,6 @@ import Layout from '../../layouts'
 import JobListings from '../../components/joblistings/JobListings';
 
 const JobsPage: React.FC = () => {
-    console.log("It is Jobs Page");
     
   return (
     <Layout>

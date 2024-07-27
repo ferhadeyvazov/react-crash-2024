@@ -7,7 +7,6 @@ import Spinner from '../spinner/Spinner'
 const JobListings: React.FC<IProps> = ({ isHome = false }) => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
-    
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -34,8 +33,6 @@ const JobListings: React.FC<IProps> = ({ isHome = false }) => {
     }, []);
 
     let jobListings: JobObject[] = isHome ? jobs.slice(0, 3) : jobs;
-    console.log(typeof jobListings);
-    
     
     return (
         <section className='bg-blue-50 px-4 py-10'>
