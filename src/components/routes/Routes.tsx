@@ -10,8 +10,7 @@ import JobsPage from "../../pages/jobs/JobsPage";
 import NotFound from "../../pages/NotFound/NotFound";
 import JobPage, {jobLoader} from "../../pages/jobs/JobPage";
 import AddJobPage from '../../pages/addJob/AddJobPage';
-
-import { IJobForm } from '../../pages/addJob/model';
+import { addJob } from '../../services/api'
 
 // const Routers: React.FC = () => {
 //     return (
@@ -28,9 +27,7 @@ import { IJobForm } from '../../pages/addJob/model';
 //     )
 // }
 
-function addJob(newJob: IJobForm): void {
-    console.log(newJob);
-}
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(

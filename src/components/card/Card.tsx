@@ -1,5 +1,5 @@
 import React from 'react'
-import job from '../../utilities/jobs.json'
+import job from '../../db/jobs.json'
 console.log(job);
 
 type IProps={
