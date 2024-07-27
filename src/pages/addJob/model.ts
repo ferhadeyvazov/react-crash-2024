@@ -14,3 +14,7 @@ export type IJobForm = {
     salary: string;
     company: ICompany;
 }
+
+export type IProps = {
+    addJobSubmit: (arg:IJobForm) => void;
+}

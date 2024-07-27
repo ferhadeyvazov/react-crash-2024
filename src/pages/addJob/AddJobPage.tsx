@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import Layout from '../../layouts'
-import { IJobForm } from './model';
+import { IJobForm, IProps } from './model';
 
-const AddJobPage:React.FC = () => {
+const AddJobPage: React.FC<IProps> = ({ addJobSubmit }) => {
     const [title, setTitle] = useState<string>('');
     const [type, setType] = useState<string>('Full-Time');
     const [location, setLocation] = useState<string>('');
@@ -12,7 +13,9 @@ const AddJobPage:React.FC = () => {
     const [companyDescription, setCompanyDescription] = useState<string>('');
     const [contactEmail, setContactEmail] = useState<string>('');
     const [contactPhone, setContactPhone] = useState<string>('');
-    
+
+    const navigate = useNavigate();
+
     function submitForm(e:any):void {
         e.preventDefault();
         let jobForm: IJobForm = {
@@ -28,8 +31,9 @@ const AddJobPage:React.FC = () => {
                 contactPhone: contactPhone
             }
         }
-        console.log(jobForm);
-        
+        addJobSubmit(jobForm);
+
+        return navigate('/jobs');
     }
     
   return (
