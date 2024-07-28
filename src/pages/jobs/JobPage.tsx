@@ -1,15 +1,24 @@
 import React from 'react'
-import { useLoaderData, Link } from 'react-router-dom'
+import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { JobObject } from '../../components/joblistings/models';
 import Layout from '../../layouts'; 
 
 interface IProps {
-    deleteJob: (arg: number) => void;
+    deleteJob: (arg: number|string) => void;
 }
 const JobPage: React.FC<IProps> = ({ deleteJob }) => {
+    const navigate = useNavigate();
     const job: JobObject = useLoaderData() as any;
 
+    const onDeleteClick = () => {
+        const confirm = window.confirm('Are you Sure to want to delete this job?');
+        if(!confirm) return;
+
+        deleteJob(job.id);
+
+        navigate('/jobs');
+    }
     // const [job, setJob] = useState <null|JobObject>(null)
     // const [loading, setLoading] = useState(true)
 
@@ -104,7 +113,7 @@ const JobPage: React.FC<IProps> = ({ deleteJob }) => {
                                     Edit Job
                                 </Link>
                                 <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'
-                                    onClick={()=>deleteJob(Number(job.id))}
+                                    onClick={() => onDeleteClick()}
                                 >
                                     Delete Job
                                 </button>

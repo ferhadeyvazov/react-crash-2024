@@ -12,8 +12,11 @@ export async function addJob(newJob: IJobForm): Promise<void> {
     return;
 };
 
-export async function deleteJob(id:number): Promise<void> {
+export async function deleteJob(id:number|string): Promise<void> {
     //DELETE JOB
+    const res = await fetch(`/api/jobs/${id}`, {
+        method: 'DELETE'
+    });
     console.log(`Delete Job: ${id}`);
     return;
     
