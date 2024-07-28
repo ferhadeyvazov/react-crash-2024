@@ -4,9 +4,11 @@ import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { JobObject } from '../../components/joblistings/models';
 import Layout from '../../layouts'; 
 
-const JobPage: React.FC = () => {
+interface IProps {
+    deleteJob: (arg: number) => void;
+}
+const JobPage: React.FC<IProps> = ({ deleteJob }) => {
     const job: JobObject = useLoaderData() as any;
-    console.log(job);
 
     // const [job, setJob] = useState <null|JobObject>(null)
     // const [loading, setLoading] = useState(true)
@@ -101,7 +103,9 @@ const JobPage: React.FC = () => {
                                 >
                                     Edit Job
                                 </Link>
-                                <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                                <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'
+                                    onClick={()=>deleteJob(Number(job.id))}
+                                >
                                     Delete Job
                                 </button>
                             </div>
@@ -117,7 +121,7 @@ const JobPage: React.FC = () => {
 export async function jobLoader({ params }: any) {
     const response = await fetch(`/api/jobs/${params.id}`);
     const data = await response.json();
-    return data
+    return data;
 }
 
 export default JobPage;
