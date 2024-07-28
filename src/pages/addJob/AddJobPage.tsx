@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 import Layout from '../../layouts'
 import { IJobForm, IProps } from './model';
 
@@ -32,6 +33,8 @@ const AddJobPage: React.FC<IProps> = ({ addJobSubmit }) => {
             }
         }
         addJobSubmit(jobForm);
+
+        toast.success('Job Added Successfully');
 
         return navigate('/jobs');
     }

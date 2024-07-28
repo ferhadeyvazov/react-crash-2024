@@ -17,7 +17,6 @@ export async function deleteJob(id:number|string): Promise<void> {
     const res = await fetch(`/api/jobs/${id}`, {
         method: 'DELETE'
     });
-    console.log(`Delete Job: ${id}`);
     return;
     
 }

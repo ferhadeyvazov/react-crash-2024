@@ -5,4 +5,5 @@
 <p>React Router : v6.4 Data APIs</p>
 <p>Server : JSON Server</p>
 <p>Proxy : {'/api': 'http://localhost:8000'}</p>
+<p>Notifications : React Toastify Package</p>
 

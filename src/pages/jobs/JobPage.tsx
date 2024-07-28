@@ -2,6 +2,7 @@ import React from 'react'
 import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { JobObject } from '../../components/joblistings/models';
+import { toast, Bounce } from 'react-toastify'
 import Layout from '../../layouts'; 
 
 interface IProps {
@@ -16,6 +17,19 @@ const JobPage: React.FC<IProps> = ({ deleteJob }) => {
         if(!confirm) return;
 
         deleteJob(job.id);
+        
+        // toast.success('Job deleted successfully');
+        toast.success('Job deleted successfully', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
 
         navigate('/jobs');
     }
