@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "142a",
+      "title": "Backend",
+      "type": "Internship",
+      "location": "Miami",
+      "description": "sdfsdfsdf;sf;",
+      "salary": "$80K - 90K",
+      "company": {
+        "name": "Eyvazov",
+        "description": "",
+        "contactEmail": "abc@gmail.com",
+        "contactPhone": ""
+      }
     }
   ]
 }

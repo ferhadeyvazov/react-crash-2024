@@ -18,18 +18,7 @@ const JobPage: React.FC<IProps> = ({ deleteJob }) => {
 
         deleteJob(job.id);
         
-        // toast.success('Job deleted successfully');
-        toast.success('Job deleted successfully', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-        });
+        toast.success('Job deleted successfully');
 
         navigate('/jobs');
     }

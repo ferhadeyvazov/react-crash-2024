@@ -1,6 +1,6 @@
-import { IJobForm } from "../pages/addJob/model";
+import {IJob} from '../utils/types'
 
-export async function addJob(newJob: IJobForm): Promise<void> {
+export async function addJob(newJob: IJob): Promise<void> {
     //ADD NEW JOB
     const res = await fetch('/api/jobs', {
         method: 'POST',
@@ -17,6 +17,17 @@ export async function deleteJob(id:number|string): Promise<void> {
     const res = await fetch(`/api/jobs/${id}`, {
         method: 'DELETE'
     });
+    return; 
+};
+
+export async function editJob(job:IJob): Promise<void> {
+    //EDIT JOB
+    const res = await fetch(`/api/jobs/${job.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(job)
+    });
     return;
-    
 }

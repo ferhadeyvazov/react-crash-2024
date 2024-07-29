@@ -11,7 +11,8 @@ import JobsPage from "../../pages/jobs/JobsPage";
 import NotFound from "../../pages/NotFound/NotFound";
 import JobPage, { jobLoader } from "../../pages/jobs/JobPage";
 import AddJobPage from '../../pages/addJob/AddJobPage';
-import { addJob, deleteJob } from '../../services/api'
+import { addJob, deleteJob, editJob } from '../../services/api'
+import EditJobPage from '../../pages/editJob/EditJobPage';
 
 // const Routers: React.FC = () => {
 //     return (
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
             <Route path="jobs" element={<JobsPage />} />
             <Route path='add-job' element={<AddJobPage addJobSubmit={addJob} />} />
             <Route path="jobs/:id" element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} />
+            <Route path="edit-job/:id" element={<EditJobPage editJob={editJob} />} loader={jobLoader} />
             <Route path="*" element={<NotFound />} />
         </Route>
     )
