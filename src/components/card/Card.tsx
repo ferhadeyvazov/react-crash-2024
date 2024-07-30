@@ -1,6 +1,4 @@
 import React from 'react'
-import job from '../../db/jobs.json'
-console.log(job);
 
 type IProps={
     children: React.ReactNode;

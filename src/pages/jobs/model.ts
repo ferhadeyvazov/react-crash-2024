@@ -1,4 +1,3 @@
-
-export type IProps={
-    deleteJob: (arg: number)=>Promise<void>;
+export interface IProps {
+    deleteJob: (arg: string) => void;
 }

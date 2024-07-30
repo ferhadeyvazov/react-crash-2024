@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {FaMapMarker} from 'react-icons/fa'
-import {IJob} from './models'
+import { IJobList } from './models';
 
 
-const JobListing: React.FC<IJob> = ({ job }) => {
+const JobListing: React.FC<IJobList> = ({job}) => {
+    
     const [showFullDescription, setShowFullDescription]=React.useState(false);
     let description = job.description;
 

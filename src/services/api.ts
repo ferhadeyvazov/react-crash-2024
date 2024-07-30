@@ -12,7 +12,7 @@ export async function addJob(newJob: IJob): Promise<void> {
     return;
 };
 
-export async function deleteJob(id:number|string): Promise<void> {
+export async function deleteJob(id:string): Promise<void> {
     //DELETE JOB
     const res = await fetch(`/api/jobs/${id}`, {
         method: 'DELETE'

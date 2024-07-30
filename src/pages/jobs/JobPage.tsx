@@ -1,22 +1,21 @@
 import React from 'react'
 import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
-import { JobObject } from '../../components/joblistings/models';
-import { toast, Bounce } from 'react-toastify'
-import Layout from '../../layouts'; 
+import { toast } from 'react-toastify'
+import Layout from '../../layouts';
+import { IJob } from '../../utils/types';
+import {IProps} from './model'
 
-interface IProps {
-    deleteJob: (arg: number|string) => void;
-}
+
 const JobPage: React.FC<IProps> = ({ deleteJob }) => {
     const navigate = useNavigate();
-    const job: JobObject = useLoaderData() as any;
+    const job = useLoaderData() as IJob;
 
     const onDeleteClick = () => {
         const confirm = window.confirm('Are you Sure to want to delete this job?');
         if(!confirm) return;
 
-        deleteJob(job.id);
+        job.id && deleteJob(job.id);
         
         toast.success('Job deleted successfully');
 

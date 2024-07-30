@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import JobListing from "./JobListing"
-import { IProps, JobObject } from './models'
+import { IProps } from './models'
+import { IJob } from '../../utils/types'
 import Spinner from '../spinner/Spinner'
 
 
@@ -32,7 +33,7 @@ const JobListings: React.FC<IProps> = ({ isHome = false }) => {
         fetchJobs();
     }, []);
 
-    let jobListings: JobObject[] = isHome ? jobs.slice(0, 3) : jobs;
+    let jobListings: IJob[] = isHome ? jobs.slice(0, 3) : jobs;
     
     return (
         <section className='bg-blue-50 px-4 py-10'>
@@ -45,7 +46,7 @@ const JobListings: React.FC<IProps> = ({ isHome = false }) => {
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                        {
                            jobListings.map((job) => (
-                               <JobListing key={Number(job.id)} job={job} />
+                               <JobListing key={job.id} job={job} />
                            ))
                        }
                     </div>
