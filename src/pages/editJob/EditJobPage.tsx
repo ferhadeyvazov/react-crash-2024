@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import {IProps} from './model'
 import { useLoaderData } from 'react-router-dom';
 import { IJob } from '../../utils/types';
+import { toast } from 'react-toastify';
 
 
 const EditJobPage:React.FC<IProps> = ({editJob}) => {
     const job = useLoaderData() as IJob;
     const navigate = useNavigate();
-    console.log(job);
+    
     
     const [title, setTitle] = useState(job.title);
     const [type, setType] = useState(job.type);
@@ -23,6 +24,7 @@ const EditJobPage:React.FC<IProps> = ({editJob}) => {
     function submitForm(e:any) {
         e.preventDefault();
         let form = {
+            id: job.id,
             title,
             type,
             location,
@@ -37,6 +39,7 @@ const EditJobPage:React.FC<IProps> = ({editJob}) => {
         }
 
         editJob(form);
+        toast.success('Job Updated Successfully');
         return navigate('/jobs')
     }
 

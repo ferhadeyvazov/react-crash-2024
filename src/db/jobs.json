@@ -86,13 +86,27 @@
     },
     {
       "id": "142a",
-      "title": "Backend",
-      "type": "Internship",
-      "location": "Miami",
-      "description": "sdfsdfsdf;sf;",
-      "salary": "$80K - 90K",
+      "title": "Frontend Developer",
+      "type": "Full-Time",
+      "location": "Kurdemir",
+      "description": "CANI CIXANA KIMI ISLEMELIDIR!!!!",
+      "salary": "Under $50K",
       "company": {
-        "name": "Eyvazov",
+        "name": "companyName",
+        "description": "companyDescription",
+        "contactEmail": "companyEmail",
+        "contactPhone": "companyPhone"
+      }
+    },
+    {
+      "id": "ac6f",
+      "title": "React Developer | Node.js Developer",
+      "type": "Remote",
+      "location": "Masalli",
+      "description": "Bilmirik ne lazimdir agzimiza geleni yazmisiq",
+      "salary": "Over $200K",
+      "company": {
+        "name": "Tebiet MMC",
         "description": "",
         "contactEmail": "abc@gmail.com",
         "contactPhone": ""
