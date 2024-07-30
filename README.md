@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React Jobs Project
 
 <p>Superset : TypeScript</p>
 <p>Server build tool : Vite</p>
@@ -10,9 +10,6 @@
 <p>Notifications : React Toastify Package</p>
 <p>API Requests : Post, Put, Delete (<b>Fetch</b>)</p>
 <p>Folder Structure : based On <a href='https://www.instagram.com/olha.codes/' target='_blank'>Olha.Codes</a></p>
-
-
-# React Jobs Project
 
 
 ## Usage
