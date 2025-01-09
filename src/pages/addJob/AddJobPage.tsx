@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import Layout from '../../layouts'
-import { IJobForm, IProps } from './model';
+import { IProps } from './model';
+import { IJob } from '../../utils/types';
 
 const AddJobPage: React.FC<IProps> = ({ addJobSubmit }) => {
     const [title, setTitle] = useState<string>('');
@@ -19,7 +20,7 @@ const AddJobPage: React.FC<IProps> = ({ addJobSubmit }) => {
 
     function submitForm(e:any):void {
         e.preventDefault();
-        let jobForm: IJobForm = {
+        let jobForm: IJob = {
             title: title,
             type: type,
             location: location,

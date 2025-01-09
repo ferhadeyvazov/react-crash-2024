@@ -9,7 +9,7 @@ export async function addJob(newJob: IJob): Promise<void> {
         },
         body: JSON.stringify(newJob)
     });
-    return;
+    return res.json();
 };
 
 export async function deleteJob(id:string): Promise<void> {
@@ -17,7 +17,7 @@ export async function deleteJob(id:string): Promise<void> {
     const res = await fetch(`/api/jobs/${id}`, {
         method: 'DELETE'
     });
-    return; 
+    return res.json(); 
 };
 
 export async function editJob(job:IJob): Promise<void> {
@@ -29,5 +29,5 @@ export async function editJob(job:IJob): Promise<void> {
         },
         body: JSON.stringify(job)
     });
-    return;
+    return res.json();
 }
