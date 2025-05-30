@@ -14,23 +14,6 @@ import AddJobPage from '../../pages/addJob/AddJobPage';
 import { addJob, deleteJob, editJob } from '../../services/api'
 import EditJobPage from '../../pages/editJob/EditJobPage';
 
-// const Routers: React.FC = () => {
-//     return (
-//         <>
-//             <Routes>
-//                 <Route path="/">
-//                     <Route index element={<HomePage />} />
-//                     <Route path="jobs" element={<JobsPage />} />
-//                     <Route path="jobs/:id" element={<JobPage />} />
-//                     <Route path="*" element={<NotFound />} />
-//                 </Route>
-//             </Routes>
-//         </>
-//     )
-// }
-
-
-
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/">
